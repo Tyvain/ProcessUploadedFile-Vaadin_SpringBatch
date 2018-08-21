@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://10.10.100.100:5432/postgres
+    username: parcoursup
+    password: Parcoursup123!
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL94Dialect
+        jdbc.lob.non_contextual_creation: true

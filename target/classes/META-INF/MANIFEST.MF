@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: My Starter Project
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: saugerleger
+Implementation-Vendor-Id: com.gmail.sylvain
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/my-starter-project
+Created-By: Maven Integration for Eclipse
+
