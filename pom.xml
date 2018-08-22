@@ -80,7 +80,11 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
-
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>4.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -92,5 +96,5 @@
 		</plugins>
 	</build>
 
-	
+
 </project>
