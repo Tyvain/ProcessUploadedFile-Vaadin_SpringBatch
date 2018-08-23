@@ -16,8 +16,10 @@ import com.opencsv.bean.CsvToBeanBuilder;
 
 public class StudentReader implements ItemReader<Student> {
     private Iterator<Student> iteratorStudent;
-    
-    public StudentReader(File inputFile) throws IOException {
+    private StudentHistory studentHistory;
+
+    public StudentReader(File inputFile, StudentHistory studentHistory) throws IOException {
+	this.studentHistory = studentHistory;
 	Reader reader = new BufferedReader(new FileReader(inputFile));
 	iteratorStudent = new CsvToBeanBuilder<Student>(reader).withType(Student.class)
 		.withIgnoreLeadingWhiteSpace(true)
@@ -28,7 +30,13 @@ public class StudentReader implements ItemReader<Student> {
 
     @Override
     public Student read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
-	return iteratorStudent.hasNext() ? iteratorStudent.next() : null;
+	if (iteratorStudent.hasNext()) {
+	    Student stu = iteratorStudent.next();
+	    stu.setStudentHistory(studentHistory);
+	    return stu;
+	} else {
+	    return null;
+	}
     }
 
 }

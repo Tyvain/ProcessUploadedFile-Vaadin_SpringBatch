@@ -8,7 +8,7 @@ import org.springframework.batch.core.listener.JobExecutionListenerSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import nc.unc.parcoursupui.student.model.StudentRepository;
+import nc.unc.parcoursupui.student.repositories.StudentRepository;
 
 @Component
 public class JobCompletionNotificationListener extends JobExecutionListenerSupport {

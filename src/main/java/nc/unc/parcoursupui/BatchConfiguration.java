@@ -17,9 +17,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.FileSystemResource;
 
 import nc.unc.parcoursupui.student.model.Student;
+import nc.unc.parcoursupui.student.model.StudentHistory;
 import nc.unc.parcoursupui.student.model.StudentReader;
-import nc.unc.parcoursupui.student.model.StudentRepository;
 import nc.unc.parcoursupui.student.model.StudentWriter;
+import nc.unc.parcoursupui.student.repositories.StudentHistoryRepository;
+import nc.unc.parcoursupui.student.repositories.StudentRepository;
 import nc.unc.parcoursupui.student.tasks.ArchiveFileTask;
 
 @Configuration
@@ -35,6 +37,8 @@ public class BatchConfiguration {
     @Autowired
     private StudentRepository studentRepository;
 
+    @Autowired
+    private StudentHistoryRepository studentHistoryRepository;
     
     @Value("${file.local-tmp-file}")
     private String inputFile;
@@ -45,8 +49,9 @@ public class BatchConfiguration {
     @Bean
     @StepScope
     public StudentReader reader(@Value("#{jobParameters[fileName]}") String fileName) throws IOException {
-	System.out.println("Filenehm: " + fileName);
-	return new StudentReader (new File (fileName));
+	StudentHistory studentHistory = new StudentHistory();
+	studentHistoryRepository.save(studentHistory);
+	return new StudentReader (new File (fileName), studentHistory);
     }
     
     @Bean
@@ -68,7 +73,7 @@ public class BatchConfiguration {
     @Bean
     public Step step1_readFileWriteDB(StudentRepository repository) throws Exception {
 	return stepBuilderFactory.get("step1_readFileWriteDB")
-		.<Student, Student>chunk(1000)
+		.<Student, Student>chunk(10000)
 		.reader(reader("noparamyet"))
 		.writer(writer())
 		.build();

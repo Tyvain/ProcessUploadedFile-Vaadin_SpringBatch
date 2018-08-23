@@ -1,4 +1,4 @@
-package nc.unc.parcoursupui.student.view;
+package nc.unc.parcoursupui.student.views;
 
 import java.io.File;
 
@@ -20,7 +20,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.page.Push;
 import com.vaadin.flow.router.Route;
 
-import nc.unc.parcoursupui.student.model.StudentRepository;
+import nc.unc.parcoursupui.student.repositories.StudentHistoryRepository;
+import nc.unc.parcoursupui.student.repositories.StudentRepository;
 
 /**
  * The main view contains a simple label element and a template element.
@@ -37,9 +38,8 @@ public class MainView extends VerticalLayout {
     UploadComponent myUploadComponent;
     InformationComponent infoComponent;
     
-    public MainView(@Autowired StudentRepository studentRepo, @Autowired Job jobImportCsv, @Autowired JobLauncher jobLauncher, @Value("${file.local-tmp-file}") String inputFile) {		
+    public MainView(@Autowired StudentHistoryRepository studentHistoryRepository, @Autowired StudentRepository studentRepo, @Autowired Job jobImportCsv, @Autowired JobLauncher jobLauncher, @Value("${file.local-tmp-file}") String inputFile) {		
 	this.setAlignItems(Alignment.CENTER);
-	
 	myUploadComponent = new UploadComponent(inputFile);
 	myUploadComponent.addSucceededListener(event -> uploadFileSuccceed ());
 	add(myUploadComponent);
@@ -47,12 +47,12 @@ public class MainView extends VerticalLayout {
 	goButton = new Button("Importer le fichier", event -> importFile(studentRepo, jobImportCsv, jobLauncher));
 	add(goButton);
 	
-	infoComponent = new InformationComponent(studentRepo);
-	add(infoComponent);
+	infoComponent = new InformationComponent(studentRepo, studentHistoryRepository);
+	add(infoComponent);	
     }
 
     private void uploadFileSuccceed() {
-	UI.getCurrent().access(()->infoComponent.update(myUploadComponent.getFile()));
+	infoComponent.update(UI.getCurrent(), myUploadComponent.getFile());
 	
     }
 

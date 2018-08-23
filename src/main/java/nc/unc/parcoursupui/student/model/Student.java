@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.opencsv.bean.CsvBindByName;
@@ -38,6 +39,9 @@ public class Student {
     @CsvBindByName
     private String filière;
 
+    @ManyToOne
+    private StudentHistory studentHistory;
+    
     public Student() {
 	// default constructor
     }
@@ -106,8 +110,12 @@ public class Student {
 	this.filière = filière;
     }
 
-    public static String getTableName() {
-	return TABLE_NAME;
+      public StudentHistory getStudentHistory() {
+        return studentHistory;
+    }
+
+    public void setStudentHistory(StudentHistory studentHistory) {
+        this.studentHistory = studentHistory;
     }
 
 }

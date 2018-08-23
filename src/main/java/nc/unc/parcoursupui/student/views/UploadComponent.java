@@ -1,4 +1,4 @@
-package nc.unc.parcoursupui.student.view;
+package nc.unc.parcoursupui.student.views;
 
 import java.io.File;
 import java.io.IOException;
