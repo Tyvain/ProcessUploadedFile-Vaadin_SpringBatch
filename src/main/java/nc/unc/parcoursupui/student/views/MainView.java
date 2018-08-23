@@ -67,5 +67,6 @@ public class MainView extends VerticalLayout {
 	} catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException | JobParametersInvalidException e) {
 	    throw new RuntimeException(e);
 	}
+	uploadFileSuccceed();
     }
 }

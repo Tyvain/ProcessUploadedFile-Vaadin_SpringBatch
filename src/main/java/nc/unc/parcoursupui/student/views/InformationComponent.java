@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 
+import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -35,7 +36,7 @@ public class InformationComponent extends HorizontalLayout {
 	this.getStyle().set("border", "1px solid #9E9E9E");
 	setFlexGrow(1, componentLeft);
 	setFlexGrow(1, componentRight);
-	add(componentLeft, componentLeft);
+	add(componentLeft, componentRight);
 
 	addLine("Nombre de lignes dans le fichier", nbLineInFile);
 	addLine("Nombre de lignes dans la base", nbLineInDB);
