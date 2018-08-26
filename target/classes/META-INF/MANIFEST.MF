@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Implementation-Title: My Starter Project
+Implementation-Title: importparcoursup
 Implementation-Version: 1.0-SNAPSHOT
 Built-By: saugerleger
-Implementation-Vendor-Id: com.gmail.sylvain
+Implementation-Vendor-Id: nc.unc
 Build-Jdk: 1.8.0_171
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/my-starter-project
+ ot-starter-parent/importparcoursup
 Created-By: Maven Integration for Eclipse
 
