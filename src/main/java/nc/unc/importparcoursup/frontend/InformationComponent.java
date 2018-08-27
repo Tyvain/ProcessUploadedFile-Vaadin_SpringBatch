@@ -15,8 +15,8 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import nc.unc.importparcoursup.commons.model.StudentHistory;
-import nc.unc.importparcoursup.commons.repositories.StudentHistoryRepository;
-import nc.unc.importparcoursup.commons.repositories.StudentRepository;
+import nc.unc.importparcoursup.dao.repositories.StudentHistoryRepository;
+import nc.unc.importparcoursup.dao.repositories.StudentRepository;
 
 public class InformationComponent extends HorizontalLayout {
 
