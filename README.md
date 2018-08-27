@@ -11,7 +11,9 @@ The goal is to have the fields declared only once, in the pojo (Student.java). N
 - V2: use jpa to create data in the table (in memory)
 - V3: insert in postgres
 - V4: use lib 'opencsv' to read csv into pojo
-- V5: vaadin add upload page
+- V5: add vaadin upload page
+- v6: multiple datasources (not done yet)
+- V7: login ad
 
 # Launching
 Import the project to the IDE of your choosing as a Maven project. 
