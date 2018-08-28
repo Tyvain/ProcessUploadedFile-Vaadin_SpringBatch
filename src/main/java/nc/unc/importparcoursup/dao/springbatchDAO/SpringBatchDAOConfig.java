@@ -1,5 +1,4 @@
-package nc.unc.importparcoursup.dao;
-
+package nc.unc.importparcoursup.dao.springbatchDAO;
 import java.util.HashMap;
 
 import javax.persistence.EntityManagerFactory;
@@ -20,12 +19,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactory", basePackages = { "nc.unc.importparcoursup.dao.repositories" })
-public class FooConfig {
+@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactory")
+public class SpringBatchDAOConfig {
 
     @Primary
     @Bean
-    @ConfigurationProperties(prefix = "parcoursup.datasource")
+    @ConfigurationProperties(prefix="datasource.springbatch")
     public DataSource dataSource() {
 	return DataSourceBuilder.create()
 		.build();
@@ -35,8 +34,7 @@ public class FooConfig {
     @Bean(name = "entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder, @Qualifier("dataSource") DataSource dataSource) {
 	LocalContainerEntityManagerFactoryBean em = builder.dataSource(dataSource)
-		.packages("nc.unc.importparcoursup.commons")
-		.persistenceUnit("studentz")
+		.packages("nc.unc.importparcoursup.common")
 		.build();
 
 	HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();

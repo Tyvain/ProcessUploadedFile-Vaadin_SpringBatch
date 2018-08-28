@@ -26,8 +26,8 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
-import nc.unc.importparcoursup.dao.repositories.StudentHistoryRepository;
-import nc.unc.importparcoursup.dao.repositories.StudentRepository;
+import nc.unc.importparcoursup.dao.parcoursupDAO.StudentHistoryRepository;
+import nc.unc.importparcoursup.dao.parcoursupDAO.StudentRepository;
 
 /**
  * The main view contains a simple label element and a template element.

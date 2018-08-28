@@ -1,4 +1,4 @@
-package nc.unc.importparcoursup.dao.repositories;
+package nc.unc.importparcoursup.dao.parcoursupDAO;
 
 import org.springframework.data.repository.CrudRepository;
 

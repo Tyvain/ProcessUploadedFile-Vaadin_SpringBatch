@@ -1,10 +1,13 @@
-cocktail:
-  datasource:
-    jdbc-url: jdbc:postgresql://10.10.100.100:5432/parcoursup
-    username: parsup_usr
-    password: parsup_usr
-parcoursup:
-  datasource:
+datasource:
+  springbatch:
+    jdbc-url: jdbc:postgresql://10.10.100.100:5432/postgres
+    username: postgres
+    password: Azerty123!
+  lepto:
+    jdbc-url: jdbc:oracle:thin:lepto.unc.prod:1521:gestdev.lepto
+    username: grhum
+    password: clement
+  parcoursup:
     jdbc-url: jdbc:postgresql://10.10.100.100:5432/parcoursup
     username: parsup_usr
     password: parsup_usr
@@ -15,6 +18,10 @@ spring:
   batch:
     initialize-schema: always
     job.enabled: false
+logging:
+  level:
+    org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl: ERROR   
+ 
 #  jpa:
 #    hibernate:
 #      ddl-auto: create-drop

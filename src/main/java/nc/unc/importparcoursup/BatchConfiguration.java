@@ -21,8 +21,8 @@ import nc.unc.importparcoursup.batch.io.StudentWriter;
 import nc.unc.importparcoursup.batch.tasks.ArchiveFileTask;
 import nc.unc.importparcoursup.commons.model.Student;
 import nc.unc.importparcoursup.commons.model.StudentHistory;
-import nc.unc.importparcoursup.dao.repositories.StudentHistoryRepository;
-import nc.unc.importparcoursup.dao.repositories.StudentRepository;
+import nc.unc.importparcoursup.dao.parcoursupDAO.StudentHistoryRepository;
+import nc.unc.importparcoursup.dao.parcoursupDAO.StudentRepository;
 
 @Configuration
 @EnableBatchProcessing
