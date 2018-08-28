@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class BarConfig {
 
     @Bean
-    @ConfigurationProperties(prefix="parcoursup.datasource")
+    @ConfigurationProperties(prefix="cocktail.datasource")
     public DataSource barDataSource() {
         return DataSourceBuilder.create().build();
     }

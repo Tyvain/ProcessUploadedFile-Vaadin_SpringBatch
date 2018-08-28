@@ -1,24 +1,25 @@
+cocktail:
+  datasource:
+    jdbc-url: jdbc:postgresql://10.10.100.100:5432/parcoursup
+    username: parsup_usr
+    password: parsup_usr
 parcoursup:
   datasource:
-    url: jdbc:postgresql://10.10.100.100:5432/parcoursup
+    jdbc-url: jdbc:postgresql://10.10.100.100:5432/parcoursup
     username: parsup_usr
     password: parsup_usr
 file:
   local-tmp-file: C:/temp/tmpInputFile.csv
   archive-directory: C:/temp/
 spring:
-  datasource:
-      jdbc-url: jdbc:postgresql://10.10.100.100:5432/parcoursup
-      username: parsup_usr
-      password: parsup_usr
   batch:
     initialize-schema: always
     job.enabled: false
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL94Dialect
-        jdbc.lob.non_contextual_creation: true
-    show-sql: true
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQL94Dialect
+#        jdbc.lob.non_contextual_creation: true
+#    show-sql: true
