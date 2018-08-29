@@ -23,8 +23,10 @@ Run application using
 
 Open http://localhost:8080/ in browser
 
+# Other
+### Install oracle drive in maven repo
+mvn install:install-file -Dfile=lib/ojdbc8.jar -DgroupId=com.oracle -DartifactId=ojdbc8 -Dversion=12.2.0.1 -Dpackaging=jar
 
-### Legacy: How the pojo was created the first time
 ##### get column name from csv & replace 'tab' with '\n'
 ##### create column name in notepadd++, then apply regex
     search: (é)|(\/)|(è)|(ô)|(à)|(d')|(\))|(^\w)|[^\w\n]+(\w)

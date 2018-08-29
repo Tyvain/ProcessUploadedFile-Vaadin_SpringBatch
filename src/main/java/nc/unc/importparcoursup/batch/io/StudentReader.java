@@ -14,8 +14,8 @@ import org.springframework.batch.item.UnexpectedInputException;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 
-import nc.unc.importparcoursup.commons.model.Student;
-import nc.unc.importparcoursup.commons.model.StudentHistory;
+import nc.unc.importparcoursup.dao.parcoursupDAO.Student;
+import nc.unc.importparcoursup.dao.parcoursupDAO.StudentHistory;
 
 public class StudentReader implements ItemReader<Student> {
     private Iterator<Student> iteratorStudent;

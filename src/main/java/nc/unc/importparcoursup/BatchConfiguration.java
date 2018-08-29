@@ -19,8 +19,8 @@ import org.springframework.core.io.FileSystemResource;
 import nc.unc.importparcoursup.batch.io.StudentReader;
 import nc.unc.importparcoursup.batch.io.StudentWriter;
 import nc.unc.importparcoursup.batch.tasks.ArchiveFileTask;
-import nc.unc.importparcoursup.commons.model.Student;
-import nc.unc.importparcoursup.commons.model.StudentHistory;
+import nc.unc.importparcoursup.dao.parcoursupDAO.Student;
+import nc.unc.importparcoursup.dao.parcoursupDAO.StudentHistory;
 import nc.unc.importparcoursup.dao.parcoursupDAO.StudentHistoryRepository;
 import nc.unc.importparcoursup.dao.parcoursupDAO.StudentRepository;
 
@@ -61,10 +61,9 @@ public class BatchConfiguration {
     }
 
     @Bean
-    public Job importUserJob(JobCompletionNotificationListener listener, Step step1_readFileWriteDB, Step step2_archiveFile) {	    
+    public Job importUserJob(Step step1_readFileWriteDB, Step step2_archiveFile) {	    
 	return jobBuilderFactory.get("importUserJob")
 		.incrementer(new RunIdIncrementer())
-		.listener(listener)
 		.start(step1_readFileWriteDB)
 		.next(step2_archiveFile)
 		.build();

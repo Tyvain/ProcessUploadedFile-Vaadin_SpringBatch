@@ -2,15 +2,15 @@
   "hints": [],
   "groups": [
     {
-      "sourceType": "nc.unc.importparcoursup.dao.parcoursupDAO.ParcoursupDAOConfig",
-      "name": "datasource.parcoursup",
-      "sourceMethod": "public javax.sql.DataSource dataSource() ",
+      "sourceType": "nc.unc.importparcoursup.dao.leptoDAO.LeptoDAOConfig",
+      "name": "datasource.lepto",
+      "sourceMethod": "public javax.sql.DataSource leptoDataSource() ",
       "type": "javax.sql.DataSource"
     },
     {
-      "sourceType": "nc.unc.importparcoursup.dao.springbatchDAO.SpringBatchDAOConfig",
-      "name": "datasource.springbatch",
-      "sourceMethod": "public javax.sql.DataSource dataSource() ",
+      "sourceType": "nc.unc.importparcoursup.dao.parcoursupDAO.ParcoursupDAOConfig",
+      "name": "datasource.parcoursup",
+      "sourceMethod": "public javax.sql.DataSource parcoursupDataSource() ",
       "type": "javax.sql.DataSource"
     }
   ],

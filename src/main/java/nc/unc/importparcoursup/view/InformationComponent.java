@@ -1,4 +1,4 @@
-package nc.unc.importparcoursup.frontend;
+package nc.unc.importparcoursup.view;
 
 import java.io.File;
 import java.io.FileReader;
@@ -14,7 +14,7 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
-import nc.unc.importparcoursup.commons.model.StudentHistory;
+import nc.unc.importparcoursup.dao.parcoursupDAO.StudentHistory;
 import nc.unc.importparcoursup.dao.parcoursupDAO.StudentHistoryRepository;
 import nc.unc.importparcoursup.dao.parcoursupDAO.StudentRepository;
 

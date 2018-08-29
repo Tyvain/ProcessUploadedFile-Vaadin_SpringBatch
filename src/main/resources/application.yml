@@ -4,13 +4,15 @@ datasource:
     username: postgres
     password: Azerty123!
   lepto:
-    jdbc-url: jdbc:oracle:thin:lepto.unc.prod:1521:gestdev.lepto
+    jdbc-url: jdbc:oracle:thin:@//lepto.unc.prod:1521/gestdev.lepto
     username: grhum
     password: clement
+    driver-class-name: oracle.jdbc.OracleDriver
   parcoursup:
     jdbc-url: jdbc:postgresql://10.10.100.100:5432/parcoursup
     username: parsup_usr
     password: parsup_usr
+    hibernate-hbm2ddl-auto: create-drop
 file:
   local-tmp-file: C:/temp/tmpInputFile.csv
   archive-directory: C:/temp/

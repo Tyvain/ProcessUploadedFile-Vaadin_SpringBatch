@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
 
-import nc.unc.importparcoursup.commons.model.Student;
+import nc.unc.importparcoursup.dao.parcoursupDAO.Student;
 import nc.unc.importparcoursup.dao.parcoursupDAO.StudentRepository;
 
 public class StudentWriter implements ItemWriter<Student> {

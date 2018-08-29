@@ -1,4 +1,4 @@
-package nc.unc.importparcoursup.commons.model;
+package nc.unc.importparcoursup.dao.parcoursupDAO;
 
 import java.util.ArrayList;
 import java.util.Date;

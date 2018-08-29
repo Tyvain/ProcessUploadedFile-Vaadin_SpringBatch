@@ -1,4 +1,4 @@
-package nc.unc.importparcoursup.frontend;
+package nc.unc.importparcoursup.view;
 
 import java.io.File;
 

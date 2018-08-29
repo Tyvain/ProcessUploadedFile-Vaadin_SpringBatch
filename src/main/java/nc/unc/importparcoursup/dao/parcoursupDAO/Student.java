@@ -1,4 +1,4 @@
-package nc.unc.importparcoursup.commons.model;
+package nc.unc.importparcoursup.dao.parcoursupDAO;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +17,7 @@ public class Student {
     public final static String STUDENT_HISTORY_ID = "STUDENT_HISTORY_ID";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
     @ManyToOne
